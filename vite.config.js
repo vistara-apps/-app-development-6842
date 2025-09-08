@@ -7,6 +7,13 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: false,
     rollupOptions: {
+      onwarn(warning, warn) {
+        // Suppress warnings about pure annotations in node_modules
+        if (warning.code === 'INVALID_ANNOTATION' && warning.id?.includes('node_modules')) {
+          return
+        }
+        warn(warning)
+      },
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
