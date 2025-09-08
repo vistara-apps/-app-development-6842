@@ -6,7 +6,7 @@ export const privyService = {
     appearance: {
       theme: 'light',
       accentColor: 'hsl(160, 80%, 45%)',
-      logo: '/logo.png'
+      logo: '/logo.svg'
     },
     embeddedWallets: {
       createOnLogin: 'users-without-wallets'
